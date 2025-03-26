@@ -1,13 +1,13 @@
 version: 0.0
 os: linux
 files:
-  - source: /
-    destination: /var/www/html/
-    
+  - source: /app
+    destination: /var/www/myapp
+
 hooks:
   AfterInstall:
     - location: scripts/install_dependencies.sh
   AfterDeploy:
-    - location: uploadDir/postScript.sh
+    - location: scripts/postScript.sh
       timeout: 300
       runas: root
